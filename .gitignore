@@ -1,0 +1,7 @@
+incog-front-end/yarn.lock
+incog-front-end/node_modules/
+
+incog-server/yarn.lock
+incog-server/node_modules
+
+
