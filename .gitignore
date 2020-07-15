@@ -4,4 +4,5 @@ incog-front-end/node_modules/
 incog-server/yarn.lock
 incog-server/node_modules
 
-
+node_modules/
+package-lock.json
