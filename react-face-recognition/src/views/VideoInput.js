@@ -76,8 +76,6 @@ class VideoInput extends Component {
           };
 
           const output = exprObj && exprObj.reduce(maxCallback);
-          console.log("VideoInput -> capture -> output", output)
-
           this.setState({
             expression: output
           })
