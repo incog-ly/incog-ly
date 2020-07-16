@@ -208,4 +208,4 @@ class VideoInput extends Component {
   }
 }
 
-export default withRouter(VideoInput);
+export default VideoInput;
