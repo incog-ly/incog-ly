@@ -16,9 +16,11 @@ const inputSize = 160;
 const randomChoice = array => array[Math.floor(Math.random() * array.length)];
 const clothes = randomChoice(['BlazerShirt', 'BlazerSweater', 'CollarSweater', 'Hoodie', 'Overall'])
 const top = randomChoice(['NoHair', 'EyePatch','LongHairMiaWallace', 'Hat', 'Hijab', 'Turban', 'WinterHat1', 'LongHairBigHair', 'ShortHairSides', 'ShortHairFrizzle'])
-const accessories = randomChoice(['Blank', 'Kurt', 'Prescription01', 'Prescription02', 'Round', 'Wayfarers'])
+const accessories = randomChoice(['Blank', 'Prescription01', 'Prescription02', 'Round', 'Wayfarers'])
 const skinColor = randomChoice(['Light', 'Pale', 'Brown', 'Yellow', 'Tanned', 'DarkBrown', 'Black'])
-const mouth = {'neutral': 'Twinkle', 'happy': 'Smile', 'sad':  'Sad', 'angry': 'Grimace', 'fearful': 'ScreamOpen', 'disgusted': 'Vomit', 'surprised': 'Default'}
+const mouth = {'neutral': 'Twinkle', 'happy': 'Smile', 'sad':  'Sad', 'angry': 'Grimace', 'fearful': 'ScreamOpen', 'disgusted': 'Vomit', 'surprised': 'Disbelief'}
+const eyes = {'neutral': 'Default', 'happy': 'Happy', 'sad':  'Cry', 'angry': 'Squint', 'fearful': 'Dizzy', 'disgusted': 'Squint', 'surprised': 'Surprised'}
+const eyeBrows = {'neutral': 'DefaultNatural', 'happy': 'Default', 'sad':  'SadConcernedNatural', 'angry': 'AngryNatural', 'fearful': 'SadConcernedNatural', 'disgusted': 'SadConcernedNatural', 'surprised': 'RaisedExcitedNatural'}
 
 class VideoInput extends Component {
   constructor(props) {
@@ -145,7 +147,7 @@ class VideoInput extends Component {
                         {/*TODO: Replacement for the hardcoded translateX center value */}
                         <Avatar
                         style={{width: 300, height: 600, transform:  `translateX(
-                          ${-this.lerp( -_X-650 , _X+650 , 0.01)}px)`, marginBottom: 0,}}
+                          ${350-_X}px)`, marginBottom: 0,}}
                         avatarStyle='Square'
                         topType={top}
                         accessoriesType={accessories}
@@ -153,8 +155,8 @@ class VideoInput extends Component {
                         facialHairType='Blank'
                         clotheType={clothes}
                         clotheColor='PastelBlue'
-                        eyeType='Happy'
-                        eyebrowType='Default'
+                        eyeType={eyes[expression]}
+                        eyebrowType={eyeBrows[expression]}
                         mouthType={mouth[expression]}
                         skinColor={skinColor}
                       />
