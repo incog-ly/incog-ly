@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-PROJECT_BASE_PATH='/half-mile-hackathon'
+PROJECT_BASE_PATH='/root/half-mile-hackathon'
 # Configure nginx
 cp $PROJECT_BASE_PATH/conf/nginx_half-mile-hackathon.conf /etc/nginx/sites-available/half-mile-hackathon.conf
 rm /etc/nginx/sites-enabled/default
