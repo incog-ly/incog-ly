@@ -10,6 +10,8 @@ import {
 import Avatar, { Piece } from "avataaars";
 // Import face profile
 
+import connectStream from "../util/audioContext";
+
 const JSON_PROFILE = require("../descriptors/bnk48.json");
 
 const WIDTH = 500;
@@ -257,6 +259,8 @@ class MediaBridge extends Component {
     // when the other side added a media stream, show it on screen
     this.pc.onaddstream = (e) => {
       console.log("onaddstream", e);
+      console.log("yooooo oooo oooo")
+      connectStream(e.stream);
       this.remoteStream = e.stream;
       this.remoteVideo.srcObject = this.remoteStream = e.stream;
       this.setState({ bridge: "established" });
